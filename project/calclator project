@@ -1,0 +1,76 @@
+#create a function
+# addition
+def add(a,b):
+    c=a+b
+    return c
+#subraction
+def sub(a,b):
+    c=a-b
+    return c
+#multiplication
+def mul(a,b):
+    c=a*b
+    return c
+#division
+def div(a,b):
+    if b==0:
+        return ("error division by  zero  ")
+    c=a/b
+    return c
+#power
+def power(a,b):
+    if b==0:
+        return ("error powerby  zero  ")
+    c=a**b
+    return c
+
+
+def get_number():
+    try:
+        x=int(input("enter the number is :"))
+        y=int(input("enter the number is :"))
+        z=x,y
+        return z
+    except ValueError:
+        print("pls enter the valid number")
+        return None,None
+    finally:
+        print("program completed successfully")
+
+
+def cal():
+    print("Advanced python project")
+
+    while True:
+      print("\n choose operation:")
+      print("1.addition")
+      print("2.subration")
+      print("3.multiplication")
+      print("4.division")
+      print("5.power")
+
+      choice=input("enter the number (1-5):")
+
+      if choice=='5':
+        print("enter valiable number,goodbye")
+        break
+
+      if choice in ['1','2','3','4','5']:
+        x,y=get_number()
+        if x is None or  y is None:
+            continue
+           
+        if choice=='1':
+            result=add(x,y)
+        elif choice=='2':
+            result=sub(x,y)
+        elif choice=='3':
+            result=mul(x,y)
+        elif choice=='4':
+           result=div(x,y)
+        elif choice=='5':
+            result=power(x,y)
+        print(f"result:",{result})
+      else:
+            print("Invalid choice so pls enter the number is ( 1-5)")
+cal()
